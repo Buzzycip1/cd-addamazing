@@ -11,7 +11,7 @@ public class Contact {
     @Column
     private int id;
     @Column
-    private String  name;
+    private String name;
     @Column
     private String surname;
     @Column
@@ -68,4 +68,5 @@ public class Contact {
     public void setEmail(String email) {
         this.email = email;
     }
+
 }
