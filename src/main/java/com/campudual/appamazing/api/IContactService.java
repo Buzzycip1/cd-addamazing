@@ -7,9 +7,17 @@ import java.util.List;
 
 public interface IContactService {
 
-    ContactDto queryContact (ContactDto contact);
-    List<ContactDto> queryAllContacts();
-    int insertContact (ContactDto contact);
-    int updateContact (ContactDto contact);
-    int deleteContact (ContactDto contact);
+    ContactDto queryContact(ContactDto contactDTO);
+    List<ContactDto> queryAllContact();
+    int insertContact(ContactDto contactDTO);
+    int updateContact(ContactDto contactDTO);
+    int deleteContact(ContactDto contactDTO);
+
+
+
+
+
+
+
+
 }
