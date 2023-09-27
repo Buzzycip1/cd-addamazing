@@ -38,12 +38,16 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public int updateProduct(ProductDto product) {
-        return 0;
+    public int updateProduct(ProductDto productDTO) {
+        return this.insertProduct(productDTO);
     }
 
     @Override
-    public int deleteProduct(ProductDto product) {
-        return 0;
+    public int deleteProduct(ProductDto productDTO) {
+        int id = productDTO.getId();
+        Product product = ProductMapper.INSTANCE.toEntity(productDTO);
+        this.productDao.delete(product);
+        return id;
     }
+
 }
