@@ -6,6 +6,8 @@ import com.campudual.appamazing.model.dto.ProductDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/products")
 public class ProductController {
@@ -28,6 +30,10 @@ public class ProductController {
     @PostMapping(value = "/get")
     public ProductDto queryProduct(@RequestBody ProductDto product){
             return this.productService.queryProduct(product);
+    }
+    @GetMapping(value = "/getAll")
+    public List<ProductDto> queryAllProducts(){
+            return this.productService.queryAllProducts();
     }
 
 }
