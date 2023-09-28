@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/products")
-
 public class ProductController {
     @Autowired
     IProductService productService;
@@ -27,7 +26,7 @@ public class ProductController {
     }
 
     @PostMapping(value = "/get")
-    public ProductDto queryProduct(ProductDto product){
+    public ProductDto queryProduct(@RequestBody ProductDto product){
             return this.productService.queryProduct(product);
     }
 
