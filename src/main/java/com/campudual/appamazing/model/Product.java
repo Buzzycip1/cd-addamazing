@@ -7,9 +7,8 @@ import java.util.Date;
 @Entity
 @Table(name = "PRODUCTS")
 public class Product {
-
-    @Id //   clave primaria
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // como genera los números
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column
     private String name;

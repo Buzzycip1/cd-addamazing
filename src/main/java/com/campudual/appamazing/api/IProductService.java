@@ -11,6 +11,7 @@ public interface IProductService {
     List<ProductDto> queryAllProducts();
 
     int insertProduct(ProductDto productDTO);
+
     int updateProduct(ProductDto productDTO);
 
     int deleteProduct(ProductDto productDTO);
