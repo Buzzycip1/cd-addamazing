@@ -7,74 +7,75 @@ import java.util.Date;
 
 public class ProductDto {
 
-         private int id;
+    private int id;
 
-        private String name;
+    private String name;
 
-        private  int stock;
+    private int stock;
 
-        private BigDecimal price;
+    private BigDecimal price;
 
-        private boolean active;
+    private boolean active;
 
-        private Date date_added;
-        private Category category;
+    private Date date_added;
 
-    public Category getCategory() {
-        return this.category;
+    private CategoryDto category;
+
+    public CategoryDto getCategory() {
+        return category;
     }
 
-    public void setCategory(Category category) {
+    public void setCategory(CategoryDto category) {
         this.category = category;
     }
 
     public int getId() {
-            return id;
-        }
+        return id;
+    }
 
-        public void setId(int id) {
-            this.id = id;
-        }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-        public String getName() {
-            return name;
-        }
+    public String getName() {
+        return name;
+    }
 
-        public void setName(String name) {
-            this.name = name;
-        }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-        public int getStock() {
-            return stock;
-        }
+    public int getStock() {
+        return stock;
+    }
 
-        public void setStock(int stock) {
-            this.stock = stock;
-        }
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
 
-        public BigDecimal getPrice() {
-            return price;
-        }
+    public BigDecimal getPrice() {
+        return price;
+    }
 
-        public void setPrice(BigDecimal price) {
-            this.price = price;
-        }
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
 
-        public boolean isActive() {
-            return active;
-        }
+    public boolean isActive() {
+        return active;
+    }
 
-        public void setActive(boolean active) {
-            this.active = active;
-        }
+    public void setActive(boolean active) {
+        this.active = active;
+    }
 
-        public Date getDate_added() {
-            return date_added;
-        }
+    public Date getDate_added() {
+        return date_added;
+    }
 
-        public void setDate_added(Date date_added) {
-            this.date_added = date_added;
-        }
+    public void setDate_added(Date date_added) {
+        this.date_added = date_added;
+    }
 
 
 }
