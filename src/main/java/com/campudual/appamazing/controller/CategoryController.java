@@ -3,14 +3,17 @@ package com.campudual.appamazing.controller;
 
 import com.campudual.appamazing.api.ICategoryService;
 import com.campudual.appamazing.model.dto.CategoryDto;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@RestController()
 @RequestMapping("/categories")
 public class CategoryController {
+    @Autowired
     private ICategoryService categoryService;
+
 
     @GetMapping(value = "/testMethod")
     public String testControllerMethod() {
