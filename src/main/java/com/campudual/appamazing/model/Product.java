@@ -20,6 +20,16 @@ public class Product {
     private boolean active;
     @Column
     private Date date_added;
+    @ManyToOne
+    @JoinColumn(name= "category") // el nombre de la columna enlazar
+    private Category category;
+
+    public Category getCategory() {
+        return category;
+    }
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 
     public int getId() {
         return id;

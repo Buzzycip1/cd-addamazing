@@ -1,5 +1,7 @@
 package com.campudual.appamazing.model.dto;
 
+import com.campudual.appamazing.model.Category;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -16,8 +18,17 @@ public class ProductDto {
         private boolean active;
 
         private Date date_added;
+        private Category category;
 
-        public int getId() {
+    public Category getCategory() {
+        return this.category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public int getId() {
             return id;
         }
 
