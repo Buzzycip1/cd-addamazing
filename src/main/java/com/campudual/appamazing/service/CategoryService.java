@@ -5,7 +5,6 @@ import com.campudual.appamazing.model.Category;
 import com.campudual.appamazing.model.dao.CategoryDao;
 import com.campudual.appamazing.model.dto.CategoryDto;
 import com.campudual.appamazing.model.dto.dtomapper.CategoryMapper;
-import com.campudual.appamazing.model.dto.dtomapper.ContactMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
