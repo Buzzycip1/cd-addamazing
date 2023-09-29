@@ -1,20 +1,24 @@
 package com.campudual.appamazing.service;
 
+import com.campudual.appamazing.api.ICategoryService;
 import com.campudual.appamazing.model.Category;
 import com.campudual.appamazing.model.dao.CategoryDao;
 import com.campudual.appamazing.model.dto.CategoryDto;
 import com.campudual.appamazing.model.dto.dtomapper.CategoryMapper;
 import com.campudual.appamazing.model.dto.dtomapper.ContactMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
-public class CategoryService {
+@Lazy
+@Service("CategoryService")
+public class CategoryService implements ICategoryService {
 
     @Autowired
     private CategoryDao categoryDao;
 
-    @Override
+     @Override
     public CategoryDto queryCategory(CategoryDto categoryDTO) {
 
         Category category = CategoryMapper.INSTANCE.toEntity(categoryDTO);
@@ -29,8 +33,8 @@ public class CategoryService {
 
     @Override
     public int insertCategory(CategoryDto categoryDTO) {
-        Category category = ContactMapper.INSTANCE.toEntity(categoryDTO); //genera un nuevo contacto  sin id
-        Category category1contact1 = this.categoryDao.saveAndFlush(category); // cuando se guarda en la  BD y devuelve un id
+        Category category = CategoryMapper.INSTANCE.toEntity(categoryDTO); //genera una nueva categoria  sin id
+        Category category1 = this.categoryDao.saveAndFlush(category); // cuando se guarda en la  BD y devuelve un id
         return category.getId();
     }
 
@@ -42,7 +46,7 @@ public class CategoryService {
     @Override
     public int deleteCategory(CategoryDto categoryDTO) {
         int id = categoryDTO.getId();
-        Category category = ContactMapper.INSTANCE.toEntity(categoryDTO);
+        Category category = CategoryMapper.INSTANCE.toEntity(categoryDTO);
         categoryDao.delete(category);
         return id;
     }
