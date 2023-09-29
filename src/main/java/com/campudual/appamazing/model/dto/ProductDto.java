@@ -19,14 +19,14 @@ public class ProductDto {
 
     private Date date_added;
 
-    private CategoryDto category;
+    private CategoryDto categoryDto;
 
-    public CategoryDto getCategory() {
-        return category;
+    public CategoryDto getCategoryDto() {
+        return categoryDto;
     }
 
-    public void setCategory(CategoryDto category) {
-        this.category = category;
+    public void setCategoryDto(CategoryDto categoryDto) {
+        this.categoryDto = categoryDto;
     }
 
     public int getId() {
