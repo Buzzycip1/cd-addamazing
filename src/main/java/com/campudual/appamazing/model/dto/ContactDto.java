@@ -1,6 +1,6 @@
 package com.campudual.appamazing.model.dto;
 
-public class ContactDto {
+public class ContactDto  {
     private int id;
     private String name;
     private String  surname;

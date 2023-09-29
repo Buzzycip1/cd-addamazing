@@ -1,6 +1,8 @@
 package com.campudual.appamazing.service;
 
+
 import com.campudual.appamazing.api.IProductService;
+import com.campudual.appamazing.model.Contact;
 import com.campudual.appamazing.model.Product;
 import com.campudual.appamazing.model.dao.ProductDao;
 import com.campudual.appamazing.model.dto.ProductDto;
@@ -21,7 +23,7 @@ public class ProductService implements IProductService {
     public ProductDto queryProduct(ProductDto productDTO) {
 
         Product product = ProductMapper.INSTANCE.toEntity(productDTO);
-        Product finalProduct = this.productDao.getReferenceById(product.getId());
+        Product finalProduct = this.productDao.getReferenceById(product.getStock());
         return ProductMapper.INSTANCE.toDTO(finalProduct);
     }
 
