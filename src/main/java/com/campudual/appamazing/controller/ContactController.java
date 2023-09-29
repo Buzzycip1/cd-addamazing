@@ -42,9 +42,14 @@ public class ContactController {
     public int insertContact(@RequestBody ContactDto contact) {
         return this.contactService.insertContact(contact);
     }
+    @PutMapping(value = "/update")
+    public int updateContacts(@RequestBody ContactDto contact) {
+        return this.contactService.updateContact(contact);
+    }
 
-
-
-
+    @DeleteMapping(value = "/delete")
+    public int deleteContact(@RequestBody ContactDto contact) {
+        return this.contactService.deleteContact(contact);
+    }
 
 }
