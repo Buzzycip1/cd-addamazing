@@ -6,7 +6,9 @@ import com.campudual.appamazing.model.dto.ProductDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/products")
@@ -54,10 +56,27 @@ public class ProductController {
         return this.productService.deleteProduct(product);
     }
 
+    @PostMapping(value = "/buy")
+    public int buyProduct(@RequestBody Map<String, Integer> body) {
+        int quantity = body.get("quantity");
+        ProductDto productDto = new ProductDto();
+        productDto.setId(body.get("id"));
+        return this.productService.buyProduct(productDto, quantity);
+    }
+
     @PutMapping(value = "/buy")
     public int buyProduct(@RequestBody ProductDto productDto) {
-        return this.productService.buyProduct(productDto, 5);
+        int quantity = 5;
+        return this.productService.buyProduct(productDto, quantity);
     }
+
+    @PostMapping(value = "/buyandshowprice")
+    public BigDecimal buyProductAndShowPrice(@RequestBody ProductDto productDto){
+        int quantity = 5;
+        this.productService.calculateTotalPrice(productDto, quantity);
+        return this.productService.calculateTotalPrice(productDto, quantity);
+    }
+
 
 }
 
