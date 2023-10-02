@@ -1,10 +1,14 @@
 package com.campudual.appamazing.service;
 
 import com.campudual.appamazing.api.IContactService;
+import com.campudual.appamazing.api.IProductService;
 import com.campudual.appamazing.model.Contact;
+import com.campudual.appamazing.model.Product;
 import com.campudual.appamazing.model.dao.ContactDao;
 import com.campudual.appamazing.model.dto.ContactDto;
+import com.campudual.appamazing.model.dto.ProductDto;
 import com.campudual.appamazing.model.dto.dtomapper.ContactMapper;
+import com.campudual.appamazing.model.dto.dtomapper.ProductMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
@@ -18,6 +22,9 @@ public class ContactService implements IContactService {
 
     @Autowired
     private ContactDao contactDao;
+
+    @Autowired
+    private IProductService productService;
 
 
     @Override
@@ -52,4 +59,6 @@ public class ContactService implements IContactService {
         contactDao.delete(contact);
         return id;
     }
+
+
 }

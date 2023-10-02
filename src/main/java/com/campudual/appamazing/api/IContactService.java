@@ -1,6 +1,7 @@
 package com.campudual.appamazing.api;
 
 import com.campudual.appamazing.model.dto.ContactDto;
+import com.campudual.appamazing.model.dto.ProductDto;
 
 
 import java.util.List;
@@ -12,12 +13,6 @@ public interface IContactService {
     int insertContact(ContactDto contactDTO);
     int updateContact(ContactDto contactDTO);
     int deleteContact(ContactDto contactDTO);
-
-
-
-
-
-
 
 
 }

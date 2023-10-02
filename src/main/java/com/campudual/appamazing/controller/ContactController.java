@@ -3,6 +3,7 @@ package com.campudual.appamazing.controller;
 
 import com.campudual.appamazing.api.IContactService;
 import com.campudual.appamazing.model.dto.ContactDto;
+import com.campudual.appamazing.model.dto.ProductDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -54,5 +55,6 @@ public class ContactController {
     public int deleteContact(@RequestBody ContactDto contact) {
         return this.contactService.deleteContact(contact);
     }
+
 
 }

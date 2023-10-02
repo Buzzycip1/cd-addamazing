@@ -16,6 +16,8 @@ public interface IProductService {
 
     int deleteProduct(ProductDto productDTO);
 
+    int buyProduct(ProductDto product, int quantity);
+
 
 }
 
