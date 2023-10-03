@@ -56,22 +56,22 @@ public class ProductController {
         return this.productService.deleteProduct(product);
     }
 
-//    @PutMapping(value= "/buy")
-//    public int buyProduct(@RequestBody ProductDto productDTO) {
-//        return this.productService.buyProduct(productDTO,5);
-//    }
-
-    @PutMapping(value = "/buy")
-    public int buyProduct(@RequestBody ProductDto productDto) {
-        int quantity = 5;
-        return this.productService.buyProduct(productDto, quantity);
+    @PutMapping(value= "/buy")
+    public int buyProduct(@RequestBody ProductDto productDTO) {
+        return this.productService.buyProduct(productDTO,5);
     }
 
+//    @PutMapping(value = "/buy")
+//    public int buyProduct(@RequestBody ProductDto productDTO) {
+//        int quantity = 5;
+//        return this.productService.buyProduct(productDTO, quantity);
+//    }
+
     @PostMapping(value = "/buyandshowprice")
-    public BigDecimal buyProductAndShowPrice(@RequestBody ProductDto productDto){
+    public BigDecimal buyProductAndShowPrice(@RequestBody ProductDto productDTO){
         int quantity = 5;
-        this.productService.calculateTotalPrice(productDto, quantity);
-        return this.productService.calculateTotalPrice(productDto, quantity);
+        this.productService.calculateTotalPrice(productDTO, quantity);
+        return this.productService.calculateTotalPrice(productDTO, quantity);
     }
 
 
