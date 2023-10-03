@@ -55,12 +55,11 @@ public class ProductService implements IProductService {
     @Override
     public int buyProduct(ProductDto product, int quantity) {
         ProductDto productToBuy = this.queryProduct(product);
-        if (productToBuy.isActive() && quantity <= productToBuy.getStock()) {
-            productToBuy.setStock(productToBuy.getStock() - quantity);
+        if (productToBuy.isActive() && quantity <= productToBuy.getStock()){
+            productToBuy.setStock(productToBuy.getStock()-quantity);
             this.updateProduct(productToBuy);
         }
         return productToBuy.getStock();
-
     }
 
     @Override

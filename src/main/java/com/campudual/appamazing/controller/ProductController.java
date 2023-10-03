@@ -56,13 +56,10 @@ public class ProductController {
         return this.productService.deleteProduct(product);
     }
 
-    @PostMapping(value = "/buy")
-    public int buyProduct(@RequestBody Map<String, Integer> body) {
-        int quantity = body.get("quantity");
-        ProductDto productDto = new ProductDto();
-        productDto.setId(body.get("id"));
-        return this.productService.buyProduct(productDto, quantity);
-    }
+//    @PutMapping(value= "/buy")
+//    public int buyProduct(@RequestBody ProductDto productDTO) {
+//        return this.productService.buyProduct(productDTO,5);
+//    }
 
     @PutMapping(value = "/buy")
     public int buyProduct(@RequestBody ProductDto productDto) {
